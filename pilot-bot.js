@@ -1,3 +1,5 @@
+// import axios from 'axios'
+const axios = require('axios')
 const Discord = require('discord.js')
 const client = new Discord.Client()
 
@@ -55,6 +57,11 @@ function processCommand(recievedMessage){
 
         case 'add': addCommand(arguments, recievedMessage); break;
 
+        case 'image':
+        case 'img':
+        case 'picture':
+        case 'pic': getPic(arguments, recievedMessage); break;
+
         default: recievedMessage.channel.send("Sorry, i didn't understand what you said. Try again?"); break;
     }
 }
@@ -102,6 +109,27 @@ function addCommand(arguments, recievedMessage){
     })
 
     recievedMessage.channel.send("The sum of " + arguments + " is " + sum.toString())
+}
+
+const getImage = async (parameter) => {
+    try {
+      return await axios.get('http://www.splashbase.co/api/v1/images/' + parameter )
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+const getPic = async(arguments, recievedMessage) => {
+    
+
+    if(arguments.length === 0){
+        const image = await getImage('random')
+        if(image.data.url){
+            recievedMessage.channel.send("Here's a random image for you!")
+            const randomMedia = new Discord.Attachment(image.data.url)
+            recievedMessage.channel.send(randomMedia)
+        }
+    }
 }
 
 // Enter Bot Token Here
