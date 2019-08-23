@@ -1,0 +1,23 @@
+{
+  "name": "pilot-bot",
+  "version": "1.0.0",
+  "description": "A Discord test bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vipulchodankar/pilot-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vipulchodankar/pilot-bot/issues"
+  },
+  "homepage": "https://github.com/vipulchodankar/pilot-bot#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
