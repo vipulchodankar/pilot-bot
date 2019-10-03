@@ -2,17 +2,18 @@
   "name": "pilot-bot",
   "version": "1.0.0",
   "description": "A Discord test bot.",
-  "main": "index.js",
+  "main": "pilot-bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node pilot-bot.js",
+    "dev": "nodemon pilot-bot.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vipulchodankar/pilot-bot.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Vipul Chodankar",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/vipulchodankar/pilot-bot/issues"
   },
@@ -20,5 +21,8 @@
   "dependencies": {
     "axios": "^0.19.0",
     "discord.js": "^11.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
   }
 }
